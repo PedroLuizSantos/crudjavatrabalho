@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CrudFuncionarioController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <tabs>
+                  <Tab text="Cadastrar">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="180.0" layoutY="57.0" text="Nome:" />
+                              <TextField fx:id="IncluirnomeFuncionario" layoutX="221.0" layoutY="53.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira o Nome" AnchorPane.bottomAnchor="273.0" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="53.0" />
+                              <Label layoutX="104.0" layoutY="95.0" text="Data de Nascimento:" />
+                              <DatePicker fx:id="IncluirdataFuncionario" layoutX="221.0" layoutY="91.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira a Data de Nascimento" AnchorPane.bottomAnchor="235.0" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="91.0" />
+                              <TextField fx:id="IncluirsalarioFuncionario" layoutX="221.0" layoutY="130.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira o  Salário" />
+                              <Label layoutX="178.0" layoutY="134.0" text="Salario:" />
+                              <Button fx:id="IncluirButton" layoutX="256.0" layoutY="176.0" mnemonicParsing="false" onAction="#IncluirFuncionario" prefHeight="38.0" prefWidth="121.0" text="Efetuar Cadastro" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Página de Cadastro:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Alterar">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="164.0" layoutY="195.0" text="Salario:" />
+                              <Label layoutX="92.0" layoutY="152.0" text="Data de Nascimento:" />
+                              <Label layoutX="166.0" layoutY="108.0" text="Nome:" />
+                              <TextField fx:id="AlterarnomeFuncionario" layoutX="210.0" layoutY="104.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira o Nome " />
+                              <TextField fx:id="AlterarsalarioFuncionario" layoutX="210.0" layoutY="191.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira o Salário" />
+                              <DatePicker fx:id="AlterardataFuncionario" layoutX="210.0" layoutY="148.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira Data de Nascimento" />
+                              <Label layoutX="184.0" layoutY="65.0" prefHeight="17.0" prefWidth="17.0" text="ID:" />
+                              <TextField fx:id="AlteraridFuncionario" layoutX="210.0" layoutY="61.0" prefHeight="25.0" prefWidth="190.0" promptText="Insira o ID" />
+                              <Button fx:id="PesquisarButton" layoutX="210.0" layoutY="237.0" mnemonicParsing="false" onAction="#PesquisarFuncionario" prefHeight="34.0" prefWidth="72.0" text="Buscar" />
+                              <Button fx:id="AlterarButton" layoutX="338.0" layoutY="237.0" mnemonicParsing="false" onAction="#AlterarFuncionario" prefHeight="34.0" prefWidth="72.0" text="Alterar" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Página de Alteração:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Pesquisar">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="textoIdPesquisar" layoutX="216.0" layoutY="176.0" prefHeight="32.0" prefWidth="149.0" promptText="Insira o ID" />
+                              <Button fx:id="PesquisarButton" layoutX="263.0" layoutY="223.0" mnemonicParsing="false" onAction="#Pesquisar" text="Buscar " />
+                              <Label layoutX="202.0" layoutY="57.0" text="Nome:" />
+                              <Label layoutX="130.0" layoutY="95.0" text="Data de Nascimento:" />
+                              <Label layoutX="201.0" layoutY="127.0" text="Salario:" />
+                              <Label layoutX="194.0" layoutY="184.0" prefHeight="0.0" prefWidth="15.0" text="ID:" />
+                              <Label fx:id="labelNomePesquisar" blendMode="DARKEN" layoutX="248.0" layoutY="43.0" prefHeight="40.0" prefWidth="225.0" textFill="#30313257" />
+                              <Label fx:id="labelDataNascimentoPesquisar" layoutX="251.0" layoutY="95.0" prefHeight="17.0" prefWidth="84.0" />
+                              <Label fx:id="labelSalarioPesquisar" layoutX="255.0" layoutY="127.0" prefHeight="17.0" prefWidth="84.0" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Página de Pesquisa:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Excluir">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="132.0" layoutY="88.0" text="ID:" />
+                              <TextField fx:id="ExcluiridFuncionario" layoutX="166.0" layoutY="84.0" prefHeight="25.0" prefWidth="221.0" promptText="Insira o ID " />
+                              <Button fx:id="ExcluirButton" layoutX="226.0" layoutY="124.0" mnemonicParsing="false" onAction="#ExcluirFuncionario" prefHeight="35.0" prefWidth="102.0" text="Efetuar Exclusão" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Página de Exclusão:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Listar">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="TVMostrar" layoutX="4.0" layoutY="90.0" prefHeight="253.0" prefWidth="569.0">
+                                <columns>
+                                  <TableColumn fx:id="IdListar" prefWidth="36.0" text="ID" />
+                                  <TableColumn fx:id="listarNome" prefWidth="238.0" text="Nome" />
+                                    <TableColumn fx:id="listarDataNascimento" prefWidth="168.0" text="Data de Nascimento" />
+                                    <TableColumn fx:id="listarSalario" prefWidth="116.0" text="Salário" />
+                                </columns>
+                              </TableView>
+                              <Label layoutX="34.0" layoutY="40.0" text="Total de Itens Cadastrados:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="QuantidadeItens" layoutX="309.0" layoutY="33.0" prefHeight="42.0" prefWidth="139.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Sair">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="166.0" layoutY="13.0" mnemonicParsing="false" onAction="#BotaoSair" prefHeight="29.0" prefWidth="139.0" text="Fechar Aplicativo" />
+                              <Label layoutX="14.0" layoutY="14.0" text="Página de Saída:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
